@@ -9,7 +9,6 @@ export const CartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-        alert('inside');
         const { name, image, cost } = action.payload;
         const existingItem = state.items.find(item => item.name === name);
         if (existingItem) {
@@ -32,22 +31,10 @@ export const CartSlice = createSlice({
   },
 });
 
-/* export  default function appReducer(state = initialState, action) {
-    switch (action.type) {
-        case 'todos/todoAdded': {
-          return {
+export const {   
     addItem, 
     removeItem, 
     updateQuantity, 
 } = CartSlice.actions;
 
- export const { 
-    removeitem, 
-    updatequantity, 
-} = ( removeItem, updateQuantity) => CartItem.actions;
-
-*/
-export const { additem } =  ProductList.actions;
-
-export default CartSlice.reducer; 
-//export const Store = () =>{};
+export default CartSlice.reducer;
